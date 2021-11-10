@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Memo View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MemoViewController" customModule="MemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QWY-da-jsl">
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="160"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hzb-KI-IJo">
+                                        <rect key="frame" x="5" y="35" width="418" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="kSG-T0-0WF"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="3NG-LP-SgN">
+                                        <rect key="frame" x="0.0" y="95" width="428" height="54"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="3NG-LP-SgN" firstAttribute="leading" secondItem="QWY-da-jsl" secondAttribute="leading" id="102-y5-E8p"/>
+                                    <constraint firstItem="Hzb-KI-IJo" firstAttribute="top" secondItem="QWY-da-jsl" secondAttribute="top" constant="35" id="53x-ef-PAU"/>
+                                    <constraint firstAttribute="trailing" secondItem="3NG-LP-SgN" secondAttribute="trailing" id="CG6-4p-42i"/>
+                                    <constraint firstAttribute="bottom" secondItem="3NG-LP-SgN" secondAttribute="bottom" constant="11" id="Kd2-ha-lPf"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hzb-KI-IJo" secondAttribute="trailing" constant="5" id="PGu-G2-DJa"/>
+                                    <constraint firstItem="Hzb-KI-IJo" firstAttribute="leading" secondItem="QWY-da-jsl" secondAttribute="leading" constant="5" id="R79-3c-xLJ"/>
+                                    <constraint firstAttribute="height" constant="160" id="jVd-aw-0lp"/>
+                                    <constraint firstItem="3NG-LP-SgN" firstAttribute="top" secondItem="Hzb-KI-IJo" secondAttribute="bottom" id="yIK-m2-9kM"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Oi4-Fa-HtC">
+                                <rect key="frame" x="0.0" y="160" width="428" height="666"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VeO-FA-BBm">
+                                <rect key="frame" x="0.0" y="826" width="428" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="boO-Zc-ret">
+                                        <rect key="frame" x="375" y="13" width="45" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="G4R-IM-hsC"/>
+                                            <constraint firstAttribute="width" constant="45" id="hVU-g5-dam"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <imageReference key="image" image="square.and.pencil" catalog="system" symbolScale="large"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="boO-Zc-ret" secondAttribute="trailing" constant="8" id="Gt5-x0-vtY"/>
+                                    <constraint firstAttribute="bottom" secondItem="boO-Zc-ret" secondAttribute="bottom" constant="42" id="O02-zL-4L5"/>
+                                    <constraint firstAttribute="height" constant="100" id="RR5-mA-FQX"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Oi4-Fa-HtC" secondAttribute="trailing" id="0xu-uf-Hu1"/>
+                            <constraint firstAttribute="bottom" secondItem="VeO-FA-BBm" secondAttribute="bottom" id="7Vb-iJ-e6d"/>
+                            <constraint firstItem="QWY-da-jsl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JCs-wv-ezd"/>
+                            <constraint firstItem="Oi4-Fa-HtC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ObS-Jm-i5y"/>
+                            <constraint firstItem="VeO-FA-BBm" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Qj1-7u-Pz8"/>
+                            <constraint firstItem="QWY-da-jsl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="YE8-z1-dww"/>
+                            <constraint firstItem="VeO-FA-BBm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="o6K-fz-JCo"/>
+                            <constraint firstItem="Oi4-Fa-HtC" firstAttribute="top" secondItem="QWY-da-jsl" secondAttribute="bottom" id="w3x-Ir-COM"/>
+                            <constraint firstItem="VeO-FA-BBm" firstAttribute="top" secondItem="Oi4-Fa-HtC" secondAttribute="bottom" id="wai-tE-uEz"/>
+                            <constraint firstItem="QWY-da-jsl" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="y3u-WQ-4JL"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="WGQ-gU-psB"/>
+                    <connections>
+                        <outlet property="footerView" destination="VeO-FA-BBm" id="hVn-O5-HHu"/>
+                        <outlet property="headerView" destination="QWY-da-jsl" id="olb-f2-HD1"/>
+                        <outlet property="memoCountLabel" destination="Hzb-KI-IJo" id="Iop-cE-2n7"/>
+                        <outlet property="memoTableView" destination="Oi4-Fa-HtC" id="sK5-bT-6mL"/>
+                        <outlet property="writeButton" destination="boO-Zc-ret" id="hYp-10-QQq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="490.65420560747663" y="29.805615550755942"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="square.and.pencil" catalog="system" width="128" height="115"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
