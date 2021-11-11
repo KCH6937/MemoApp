@@ -9,6 +9,8 @@ import UIKit
 
 class MemoViewController: UIViewController {
     
+    var memoList: [Memo] = []
+    
     let searchController = UISearchController(searchResultsController: nil)
     
     @IBOutlet var headerView: UIView!
@@ -25,13 +27,14 @@ class MemoViewController: UIViewController {
         memoTableView.delegate = self
         memoTableView.dataSource = self
         
-        searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "검색"
-        navigationItem.searchController = searchController
-        definesPresentationContext = true
+//        searchController.searchResultsUpdater = self
+//        searchController.obscuresBackgroundDuringPresentation = false
+//        searchController.searchBar.placeholder = "검색"
+//        navigationItem.searchController = searchController
+//        definesPresentationContext = true
         
         config()
+        registerNib()
 
     }
     
@@ -48,7 +51,11 @@ class MemoViewController: UIViewController {
         memoCountLabel.text = "0개의 메모"
         
         memoTableView.backgroundColor = .appColor(.backgroundColor)
-        
+    }
+    
+    func registerNib() {
+        let nibName = UINib(nibName: MemoTableViewCell.identifier, bundle: nil)
+        memoTableView.register(nibName, forCellReuseIdentifier: MemoTableViewCell.identifier)
     }
 
 
@@ -65,21 +72,47 @@ extension MemoViewController: UISearchResultsUpdating {
 
 extension MemoViewController: UITableViewDelegate, UITableViewDataSource {
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "메모"
+    }
+
     func numberOfSections(in tableView: UITableView) -> Int {
-        <#code#>
+        return 1
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return 15
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        
+        guard let cell = memoTableView.dequeueReusableCell(withIdentifier: MemoTableViewCell.identifier, for: indexPath) as? MemoTableViewCell else {
+            return UITableViewCell()
+        }
+        // 처음과 마지막 셀 인덱스에 radius 주기
+        cell.config()
+            
+        cell.titleLabel.text = "ㅔ메모.."
+        cell.contentLabel.text = "메모오옹"
+        cell.dateLabel.text = "123"
+        
+        return cell
+        
+        
     }
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        <#code#>
+        return 80
     }
-    
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let writeViewController = self.storyboard?.instantiateViewController(withIdentifier: WriteViewController.identifier) as? WriteViewController else { return }
+        
+        writeViewController.titleName = memoList[indexPath.row].title
+        writeViewController.content = memoList[indexPath.row].content
+        
+        self.navigationController?.pushViewController(writeViewController, animated: true)
+    }
 }
 

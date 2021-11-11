@@ -13,7 +13,7 @@
         <!--Memo View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MemoViewController" customModule="MemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemoViewController" id="BYZ-38-t0r" customClass="MemoViewController" customModule="MemoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,28 +22,25 @@
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="160"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hzb-KI-IJo">
-                                        <rect key="frame" x="5" y="35" width="418" height="60"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="kSG-T0-0WF"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <rect key="frame" x="5" y="60" width="418" height="36"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="3NG-LP-SgN">
-                                        <rect key="frame" x="0.0" y="95" width="428" height="54"/>
+                                        <rect key="frame" x="0.0" y="96" width="428" height="53"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </searchBar>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="3NG-LP-SgN" firstAttribute="leading" secondItem="QWY-da-jsl" secondAttribute="leading" id="102-y5-E8p"/>
-                                    <constraint firstItem="Hzb-KI-IJo" firstAttribute="top" secondItem="QWY-da-jsl" secondAttribute="top" constant="35" id="53x-ef-PAU"/>
                                     <constraint firstAttribute="trailing" secondItem="3NG-LP-SgN" secondAttribute="trailing" id="CG6-4p-42i"/>
                                     <constraint firstAttribute="bottom" secondItem="3NG-LP-SgN" secondAttribute="bottom" constant="11" id="Kd2-ha-lPf"/>
                                     <constraint firstAttribute="trailing" secondItem="Hzb-KI-IJo" secondAttribute="trailing" constant="5" id="PGu-G2-DJa"/>
                                     <constraint firstItem="Hzb-KI-IJo" firstAttribute="leading" secondItem="QWY-da-jsl" secondAttribute="leading" constant="5" id="R79-3c-xLJ"/>
                                     <constraint firstAttribute="height" constant="160" id="jVd-aw-0lp"/>
+                                    <constraint firstItem="Hzb-KI-IJo" firstAttribute="top" secondItem="QWY-da-jsl" secondAttribute="top" constant="60" id="oy0-aQ-6v7"/>
                                     <constraint firstItem="3NG-LP-SgN" firstAttribute="top" secondItem="Hzb-KI-IJo" secondAttribute="bottom" id="yIK-m2-9kM"/>
                                 </constraints>
                             </view>
@@ -54,10 +51,10 @@
                                 <rect key="frame" x="0.0" y="826" width="428" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="boO-Zc-ret">
-                                        <rect key="frame" x="375" y="13" width="45" height="45"/>
+                                        <rect key="frame" x="375" y="8" width="45" height="45"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="G4R-IM-hsC"/>
-                                            <constraint firstAttribute="width" constant="45" id="hVU-g5-dam"/>
+                                            <constraint firstAttribute="width" constant="45" id="lti-qc-lkI"/>
+                                            <constraint firstAttribute="height" constant="45" id="vlC-uf-2e6"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
@@ -68,9 +65,9 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="boO-Zc-ret" secondAttribute="trailing" constant="8" id="Gt5-x0-vtY"/>
-                                    <constraint firstAttribute="bottom" secondItem="boO-Zc-ret" secondAttribute="bottom" constant="42" id="O02-zL-4L5"/>
+                                    <constraint firstItem="boO-Zc-ret" firstAttribute="top" secondItem="VeO-FA-BBm" secondAttribute="top" constant="8" id="O7C-SY-MD0"/>
                                     <constraint firstAttribute="height" constant="100" id="RR5-mA-FQX"/>
+                                    <constraint firstAttribute="trailing" secondItem="boO-Zc-ret" secondAttribute="trailing" constant="8" id="ZFh-Qx-Wa7"/>
                                 </constraints>
                             </view>
                         </subviews>

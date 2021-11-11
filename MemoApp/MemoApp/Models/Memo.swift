@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MemoList {
+struct Memo {
     var title: String
     var content: String
     var isPin: Bool
