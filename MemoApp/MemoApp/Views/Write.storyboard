@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -17,23 +17,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BK9-iR-puI">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vNK-5p-Zhf">
+                                <rect key="frame" x="15" y="59" width="384" height="788"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="BK9-iR-puI" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Lx1-I8-O8r"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="BK9-iR-puI" secondAttribute="bottom" id="wrU-Gb-Jcn"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="BK9-iR-puI" secondAttribute="trailing" id="x33-SG-vH2"/>
-                            <constraint firstItem="BK9-iR-puI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="xvW-sv-FXQ"/>
+                            <constraint firstItem="vNK-5p-Zhf" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="15" id="VkP-Fl-Zyh"/>
+                            <constraint firstItem="vNK-5p-Zhf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="15" id="Yv2-CM-OzJ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="vNK-5p-Zhf" secondAttribute="bottom" constant="15" id="hT2-pa-cHy"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="vNK-5p-Zhf" secondAttribute="trailing" constant="15" id="tcj-qa-qaM"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="writeTextField" destination="BK9-iR-puI" id="duH-iQ-aAV"/>
+                        <outlet property="writeTextView" destination="vNK-5p-Zhf" id="nJH-pH-nrN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -42,6 +44,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

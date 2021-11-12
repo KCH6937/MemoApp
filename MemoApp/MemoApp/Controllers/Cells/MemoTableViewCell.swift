@@ -31,7 +31,6 @@ class MemoTableViewCell: UITableViewCell {
         self.titleLabel.textColor = .white
         self.dateLabel.textColor = .gray
         self.contentLabel.textColor = .gray
-        
     }
     
 }

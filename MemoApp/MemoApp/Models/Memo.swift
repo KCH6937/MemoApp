@@ -10,5 +10,6 @@ import Foundation
 struct Memo {
     var title: String
     var content: String
+    var date: Date
     var isPin: Bool
 }

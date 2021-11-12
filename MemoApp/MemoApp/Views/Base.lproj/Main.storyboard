@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="l1B-QF-beA">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -27,7 +27,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="3NG-LP-SgN">
+                                    <searchBar contentMode="redraw" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="3NG-LP-SgN">
                                         <rect key="frame" x="0.0" y="96" width="428" height="53"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </searchBar>
@@ -44,7 +44,7 @@
                                     <constraint firstItem="3NG-LP-SgN" firstAttribute="top" secondItem="Hzb-KI-IJo" secondAttribute="bottom" id="yIK-m2-9kM"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Oi4-Fa-HtC">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Oi4-Fa-HtC">
                                 <rect key="frame" x="0.0" y="160" width="428" height="666"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VeO-FA-BBm">
@@ -59,8 +59,11 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
                                             <imageReference key="image" image="square.and.pencil" catalog="system" symbolScale="large"/>
-                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="18"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="writeButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kY0-oB-rVC"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -68,6 +71,8 @@
                                     <constraint firstItem="boO-Zc-ret" firstAttribute="top" secondItem="VeO-FA-BBm" secondAttribute="top" constant="8" id="O7C-SY-MD0"/>
                                     <constraint firstAttribute="height" constant="100" id="RR5-mA-FQX"/>
                                     <constraint firstAttribute="trailing" secondItem="boO-Zc-ret" secondAttribute="trailing" constant="8" id="ZFh-Qx-Wa7"/>
+                                    <constraint firstAttribute="trailing" secondItem="boO-Zc-ret" secondAttribute="trailing" constant="8" id="xCw-P6-KTh"/>
+                                    <constraint firstItem="boO-Zc-ret" firstAttribute="top" secondItem="VeO-FA-BBm" secondAttribute="top" constant="8" id="y26-UV-JDV"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -86,18 +91,40 @@
                             <constraint firstItem="QWY-da-jsl" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="y3u-WQ-4JL"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="more" id="WGQ-gU-psB"/>
+                    <navigationItem key="navigationItem" id="ALp-Bs-h4l">
+                        <barButtonItem key="backBarButtonItem" title="메모" id="KbD-tE-MKf"/>
+                    </navigationItem>
                     <connections>
+                        <outlet property="backButton" destination="KbD-tE-MKf" id="e4d-5R-Ymf"/>
                         <outlet property="footerView" destination="VeO-FA-BBm" id="hVn-O5-HHu"/>
                         <outlet property="headerView" destination="QWY-da-jsl" id="olb-f2-HD1"/>
                         <outlet property="memoCountLabel" destination="Hzb-KI-IJo" id="Iop-cE-2n7"/>
                         <outlet property="memoTableView" destination="Oi4-Fa-HtC" id="sK5-bT-6mL"/>
+                        <outlet property="searchBar" destination="3NG-LP-SgN" id="CMn-tL-Bxs"/>
                         <outlet property="writeButton" destination="boO-Zc-ret" id="hYp-10-QQq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="490.65420560747663" y="29.805615550755942"/>
+            <point key="canvasLocation" x="2290.6542056074763" y="29.805615550755942"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Sgo-t3-pVN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="l1B-QF-beA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleAspectFill" id="Lbc-Cm-uGB">
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="6ox-K3-FuQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D6H-yj-2bn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1390.6542056074766" y="29.805615550755942"/>
         </scene>
     </scenes>
     <resources>
